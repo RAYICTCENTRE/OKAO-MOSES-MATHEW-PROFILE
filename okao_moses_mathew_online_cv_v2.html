@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Okao Moses Mathew — Health Informatics, Research, Data, ICT and Innovation Portfolio CV">
+<title>Okao Moses Mathew | Health Informatics & Innovation</title>
+
+<style>
+:root{
+  --navy:#0b2545;
+  --blue:#1769aa;
+  --cyan:#19a7ce;
+  --light:#eef7ff;
+  --soft:#f6f9fc;
+  --ink:#213547;
+  --muted:#63788c;
+  --white:#ffffff;
+  --line:#dce7f0;
+  --success:#16825d;
+  --shadow:0 18px 45px rgba(11,37,69,.10);
+  --shadow2:0 8px 24px rgba(11,37,69,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--soft);
+  color:var(--ink);
+  line-height:1.65;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{max-width:1180px;margin:auto;padding:24px 18px 60px}
+
+/* NAVIGATION */
+.navbar{
+  position:sticky;top:12px;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:12px 16px;margin-bottom:20px;
+  background:rgba(255,255,255,.93);
+  backdrop-filter:blur(14px);
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--shadow2)
+}
+.brand{font-weight:900;color:var(--navy);letter-spacing:.3px}
+.navlinks{display:flex;gap:7px;flex-wrap:wrap}
+.navlinks a{
+  padding:7px 10px;border-radius:8px;color:var(--muted);font-size:.85rem;font-weight:700
+}
+.navlinks a:hover{background:var(--light);color:var(--blue)}
+.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:9px;padding:7px 10px}
+
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 90% 15%,rgba(25,167,206,.35),transparent 28%),
+    linear-gradient(135deg,var(--navy),#13558c 60%,#1769aa);
+  color:white;border-radius:26px;padding:48px;
+  box-shadow:var(--shadow);
+  display:grid;grid-template-columns:1fr 190px;gap:35px;
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.12)
+}
+.hero:before{width:360px;height:360px;right:-180px;bottom:-210px}
+.hero:after{width:170px;height:170px;right:80px;top:-100px}
+.eyebrow{
+  color:#bcecff;text-transform:uppercase;letter-spacing:2.2px;
+  font-weight:800;font-size:.75rem
+}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:.98;margin:10px 0 15px;letter-spacing:-2px}
+.hero-sub{font-size:1.1rem;color:#e4f4ff;max-width:780px}
+.contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.contact a,.contact span{
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.1);
+  padding:8px 12px;border-radius:999px;font-size:.88rem
+}
+.initials{
+  width:170px;height:170px;border-radius:50%;z-index:1;
+  display:grid;place-items:center;
+  border:7px solid rgba(255,255,255,.2);
+  background:white;color:var(--navy);
+  font-size:3rem;font-weight:950;
+  box-shadow:0 20px 50px rgba(0,0,0,.18)
+}
+
+/* BUTTONS */
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.btn{
+  border:0;border-radius:10px;padding:11px 16px;
+  background:var(--blue);color:white;font-weight:800;cursor:pointer
+}
+.btn.secondary{background:white;color:var(--navy);border:1px solid var(--line)}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.04)}
+
+/* LAYOUT */
+.grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(290px,1fr);gap:22px;margin-top:22px}
+.card{
+  background:white;border:1px solid var(--line);border-radius:18px;
+  padding:27px;box-shadow:var(--shadow2)
+}
+.card + .card{margin-top:22px}
+.section-title{margin:0 0 18px;color:var(--navy);font-size:1.3rem}
+.section-title:after{
+  content:"";display:block;width:46px;height:3px;background:var(--cyan);
+  margin-top:8px;border-radius:4px
+}
+.lead{color:#49667d;font-size:1.03rem}
+
+/* HIGHLIGHTS */
+.highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.highlight{
+  padding:17px;border-radius:14px;background:var(--light);
+  border:1px solid #d7ebfa
+}
+.highlight strong{display:block;color:var(--navy);font-size:1.25rem}
+.highlight span{font-size:.82rem;color:var(--muted)}
+
+/* TIMELINE */
+.timeline{position:relative}
+.job{position:relative;border-left:2px solid #c9e2f5;padding:0 0 25px 23px}
+.job:last-child{padding-bottom:0}
+.job:before{
+  content:"";position:absolute;left:-7px;top:4px;width:11px;height:11px;
+  border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--light)
+}
+.job h3{margin:0;color:var(--navy);font-size:1.04rem}
+.meta{color:var(--blue);font-size:.86rem;font-weight:800;margin:3px 0 8px}
+.job ul{margin:7px 0 0;padding-left:18px}
+.job li{margin:4px 0}
+
+/* SKILLS */
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skill{
+  background:var(--light);border:1px solid #cfe5f8;color:#155b91;
+  padding:7px 10px;border-radius:999px;font-size:.84rem;font-weight:700
+}
+
+/* MOTHERCARE */
+.innovation{
+  background:linear-gradient(135deg,#f0f9ff,#ffffff);
+  border:1px solid #cfe8f8;border-radius:16px;padding:22px
+}
+.innovation-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+.innovation h3{margin:0;color:var(--navy);font-size:1.35rem}
+.tag{
+  background:#dff5ec;color:#0d6b4b;padding:6px 9px;border-radius:999px;
+  font-size:.75rem;font-weight:900;white-space:nowrap
+}
+.tech-stack{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0}
+.tech{
+  padding:5px 9px;background:white;border:1px solid var(--line);
+  border-radius:7px;font-size:.78rem;color:var(--muted);font-weight:700
+}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}
+.feature{
+  padding:12px;border:1px solid var(--line);background:white;border-radius:10px;
+  font-size:.9rem
+}
+.feature b{color:var(--navy)}
+
+/* PRESENTATIONS */
+.presentation-intro{color:var(--muted);margin-top:-6px}
+.gallery{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px
+}
+.gallery figure{
+  margin:0;background:white;border:1px solid var(--line);
+  border-radius:15px;overflow:hidden;box-shadow:0 6px 18px rgba(11,37,69,.06);
+  transition:.25s
+}
+.gallery figure:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+.gallery img{
+  display:block;width:100%;height:255px;object-fit:cover;
+  background:linear-gradient(135deg,#eaf5fd,#d8e8f4)
+}
+.gallery figcaption{
+  padding:14px 15px;font-size:.9rem;font-weight:750;color:var(--navy)
+}
+.gallery figcaption span{
+  display:block;margin-top:4px;color:var(--muted);font-size:.76rem;font-weight:500
+}
+
+/* EDUCATION / REFS */
+.education-item,.ref{padding:12px 0;border-bottom:1px solid var(--line)}
+.education-item:last-child,.ref:last-child{border-bottom:0}
+.education-item strong,.ref strong{display:block;color:var(--navy)}
+.education-item small,.ref small{display:block;color:var(--muted)}
+.ref small{font-size:.82rem}
+
+/* FOOTER */
+.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:28px 0 5px}
+.to-top{
+  position:fixed;right:20px;bottom:20px;width:42px;height:42px;border:0;
+  border-radius:50%;background:var(--navy);color:white;cursor:pointer;
+  opacity:0;pointer-events:none;transition:.25s;box-shadow:var(--shadow)
+}
+.to-top.show{opacity:1;pointer-events:auto}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr;padding:32px}
+  .initials{width:100px;height:100px;font-size:1.7rem}
+  .grid{grid-template-columns:1fr}
+  .highlights{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .navlinks.open{display:flex;position:absolute;left:0;right:0;top:57px;background:white;padding:10px;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2)}
+  .menu-btn{display:block}
+}
+@media print{
+  body{background:white}
+  .container{max-width:none;padding:0}
+  .navbar,.actions,.to-top{display:none}
+  .hero,.card{box-shadow:none}
+  .hero{border-radius:0}
+  .card{break-inside:avoid}
+  .gallery img{height:190px}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<nav class="navbar">
+  <a href="#top" class="brand">OKAO MOSES MATHEW</a>
+  <button class="menu-btn" id="menuBtn">☰</button>
+  <div class="navlinks" id="navlinks">
+    <a href="#profile">Profile</a>
+    <a href="#innovation">Innovation</a>
+    <a href="#experience">Experience</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero reveal" id="top">
+  <div>
+    <div class="eyebrow">Health Informatics • Research • Data • ICT • Innovation</div>
+    <h1>Okao Moses Mathew</h1>
+    <p class="hero-sub">
+      Health informatics and information systems professional with experience in health research,
+      data management, research data collection, system support, technology and community-focused programs.
+      Passionate about using data and digital innovation to strengthen health and development outcomes.
+    </p>
+    <div class="contact">
+      <a href="tel:+256785413934">☎ 0785 413 934</a>
+      <a href="mailto:matthewokao@gmail.com">✉ matthewokao@gmail.com</a>
+    </div>
+  </div>
+  <div class="initials">OM</div>
+</header>
+
+<div class="actions">
+  <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn secondary" href="mailto:matthewokao@gmail.com?subject=Professional%20Opportunity">Contact Me</a>
+</div>
+
+<section class="card reveal" id="profile">
+  <h2 class="section-title">Professional Profile</h2>
+  <p class="lead">
+    A committed and results-oriented professional with experience in health research, data management,
+    and information systems support. Passionate about contributing to evidence-based programs through
+    ethical research, teamwork, continuous learning, and practical technology solutions.
+  </p>
+  <div class="highlights">
+    <div class="highlight"><strong>Health</strong><span>Health Informatics & Information Systems</span></div>
+    <div class="highlight"><strong>Research</strong><span>Qualitative & Quantitative Data Collection</span></div>
+    <div class="highlight"><strong>Technology</strong><span>Data, ICT Support & Digital Innovation</span></div>
+  </div>
+</section>
+
+<div class="grid">
+
+<main>
+
+<section class="card reveal" id="innovation">
+  <h2 class="section-title">MotherCare Innovation</h2>
+  <div class="innovation">
+    <div class="innovation-top">
+      <div>
+        <h3>MotherCare — Pre-eclampsia Early Screening Innovation</h3>
+        <p>
+          A mobile health innovation developed to explore how digital tools and predictive approaches
+          can support early screening and risk assessment for pre-eclampsia, with a focus on
+          improving access to timely information and decision support.
+        </p>
+      </div>
+      <span class="tag">Featured Innovation</span>
+    </div>
+
+    <div class="tech-stack">
+      <span class="tech">Health Informatics</span>
+      <span class="tech">Python</span>
+      <span class="tech">Machine Learning</span>
+      <span class="tech">Flask</span>
+      <span class="tech">MySQL</span>
+      <span class="tech">HTML</span>
+      <span class="tech">CSS</span>
+      <span class="tech">JavaScript</span>
+      <span class="tech">Data Analysis</span>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature"><b>Early Screening:</b> Digital assessment of maternal risk factors and symptoms.</div>
+      <div class="feature"><b>Predictive Approach:</b> Exploration of rule-based and machine-learning risk assessment.</div>
+      <div class="feature"><b>Clinical Context:</b> Designed around maternal health and pre-eclampsia screening needs.</div>
+      <div class="feature"><b>Digital Health:</b> Combines health information, software development and data management.</div>
+    </div>
+  </div>
+</section>
+
+<section class="card reveal" id="experience">
+  <h2 class="section-title">Professional Experience</h2>
+  <div class="timeline">
+
+    <article class="job">
+      <h3>Baylor Uganda — Intern</h3>
+      <div class="meta">June 2025 – September 2026</div>
+      <ul>
+        <li>Supported health centres with data management and health information systems.</li>
+        <li>Assisted in system support, reporting, and data quality improvement activities.</li>
+        <li>Worked with clinical and program teams to support routine health data use for decision-making.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>Windle International Uganda — Research Assistant</h3>
+      <div class="meta">2023 – 2025</div>
+      <ul>
+        <li>Conducted qualitative and quantitative data collection among learners, teachers, parents, and community stakeholders.</li>
+        <li>Maintained data quality standards to ensure integrity and accuracy of research findings.</li>
+        <li>Scheduled and conducted interviews and focus group discussions.</li>
+        <li>Analyzed data using basic statistical methods and contributed to research reports.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>Enable Uganda — Research Assistant</h3>
+      <div class="meta">2024</div>
+      <ul>
+        <li>Supported disability-focused research activities through data collection and participant engagement.</li>
+        <li>Assisted in administering research tools and documenting findings.</li>
+        <li>Ensured ethical conduct and confidentiality during data collection.</li>
+        <li>Assessed the impact of vocational skills kits distributed to the youth.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>World Vision Uganda — Research Assistant</h3>
+      <div class="meta">Short-term assignments • 2022 – 2023</div>
+      <ul>
+        <li>Participated in community-based research and assessments.</li>
+        <li>Supported household surveys, interviews, and data documentation.</li>
+        <li>Assisted field teams in compiling and validating collected data.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>Restoration Gateway Africa, Uganda — IT Officer</h3>
+      <div class="meta">January 2019 – August 2019</div>
+      <ul>
+        <li>Designed and managed computer-based record systems for school, hospital, and administration.</li>
+        <li>Trained staff in computer applications and provided technical support.</li>
+        <li>Managed online and offline data entry and system troubleshooting.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>Alpha Uganda Charitable Trust — Alpha Course</h3>
+      <div class="meta">Coordinator, Northern Uganda • 2014 – 2017 | Acting National Coordinator • Jan 2018 – Jun 2018</div>
+    </article>
+
+  </div>
+</section>
+
+<section class="card reveal" id="presentations">
+  <h2 class="section-title">Presentations & Professional Engagements</h2>
+  <p class="presentation-intro">
+    Selected presentation engagements and professional forums. Replace the placeholder images below
+    with your actual photographs using the exact filenames shown.
+  </p>
+
+  <div class="gallery">
+
+    <figure>
+      <img src="1.PNG" alt="Presenting at Safe Motherhood Conference in October 2024 at Munyonyo Resort"
+           onerror="this.alt='Image placeholder: 1.PNG';">
+      <figcaption>
+        Presenting at Safe Motherhood Conference
+        <span>October 2024 • Munyonyo Resort, Uganda</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="2.PNG" alt="Presenting at Kabira Country Club in Kampala in association with Association of Radiologists in Uganda"
+           onerror="this.alt='Image placeholder: 2.PNG';">
+      <figcaption>
+        Presenting at Kabira Country Club, Kampala
+        <span>November 2024 • In association with Association of Radiologists in Uganda</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="3.PNG" alt="Presenting at National Council for Higher Education in Gulu"
+           onerror="this.alt='Image placeholder: 3.PNG';">
+      <figcaption>
+        Presenting at National Council for Higher Education
+        <span>April 2026 • Gulu, Uganda</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="4.PNG" alt="Presenting at Hotel Africana in Uganda Society of Health Scientists"
+           onerror="this.alt='Image placeholder: 4.PNG';">
+      <figcaption>
+        Presenting at Hotel Africana
+        <span>July 2026 • Uganda Society of Health Scientists</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="5.PNG" alt="Additional presentation or professional engagement"
+           onerror="this.alt='Image placeholder: 5.PNG';">
+      <figcaption>
+        Additional Presentation / Professional Engagement
+        <span>Replace 5.PNG with your fifth presentation photograph and edit this caption.</span>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+</main>
+
+<aside>
+
+<section class="card reveal">
+  <h2 class="section-title">Key Skills</h2>
+  <div class="skills">
+    <span class="skill">Research Data Collection</span>
+    <span class="skill">Qualitative Research</span>
+    <span class="skill">Quantitative Research</span>
+    <span class="skill">Health Information Systems</span>
+    <span class="skill">Data Management</span>
+    <span class="skill">ODK Configuration</span>
+    <span class="skill">Database Management</span>
+    <span class="skill">Excel</span>
+    <span class="skill">R Programming</span>
+    <span class="skill">Python</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">Web Development</span>
+    <span class="skill">IT Support</span>
+    <span class="skill">Troubleshooting</span>
+    <span class="skill">Training & Presentation</span>
+    <span class="skill">Community Mobilization</span>
+    <span class="skill">Mentorship</span>
+  </div>
+</section>
+
+<section class="card reveal" id="education">
+  <h2 class="section-title">Education</h2>
+
+  <div class="education-item">
+    <strong>Bachelor of Science in Health Informatics</strong>
+    <small>Ernest Cook University (ECUREI), Mengo</small>
+    <small class="meta">September 2023 – Present</small>
+  </div>
+
+  <div class="education-item">
+    <strong>Diploma in Computer Science</strong>
+    <small>Gulu University</small>
+    <small class="meta">September 2010 – January 2013</small>
+  </div>
+
+  <div class="education-item">
+    <strong>Kabalega Secondary School</strong>
+    <small class="meta">February 2008 – December 2009</small>
+  </div>
+
+  <div class="education-item">
+    <strong>Lango College</strong>
+    <small class="meta">February 2004 – December 2007</small>
+  </div>
+</section>
+
+<section class="card reveal">
+  <h2 class="section-title">Interests</h2>
+  <div class="skills">
+    <span class="skill">Community Health Research</span>
+    <span class="skill">Capacity Building</span>
+    <span class="skill">Networking</span>
+    <span class="skill">ICT for Development</span>
+    <span class="skill">Discipleship</span>
+  </div>
+</section>
+
+<section class="card reveal" id="contact">
+  <h2 class="section-title">Referees</h2>
+
+  <div class="ref">
+    <strong>Atukunda Patience Jaffu</strong>
+    <small>H.o.D Informatics and Statistics — Ernest Cook University</small>
+    <small>0774 606 211</small>
+    <small>Patience.atukunda@ecu.ac.ug</small>
+  </div>
+
+  <div class="ref">
+    <strong>Arthur Nyakoojo</strong>
+    <small>Head of IT — Baylor Uganda College of Medicine</small>
+    <small>0772 565 552</small>
+    <small>anyakoojo@baylor-uganda.org</small>
+  </div>
+
+  <div class="ref">
+    <strong>Ayebale Zaituni</strong>
+    <small>Impact Associate — African Women in Agricultural Research and Development</small>
+    <small>0774 944 542</small>
+    <small>ayebalez@yahoo.com</small>
+  </div>
+</section>
+
+</aside>
+</div>
+
+<footer class="footer">
+  © <span id="year"></span> Okao Moses Mathew • Professional Online CV
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+</div>
+
+<script>
+/* Mobile navigation */
+const menuBtn = document.getElementById("menuBtn");
+const navlinks = document.getElementById("navlinks");
+
+menuBtn.addEventListener("click", () => {
+  navlinks.classList.toggle("open");
+});
+
+/* Close mobile menu after selecting a section */
+document.querySelectorAll("#navlinks a").forEach(link => {
+  link.addEventListener("click", () => navlinks.classList.remove("open"));
+});
+
+/* Reveal sections as the visitor scrolls */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.08});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+/* Back-to-top button */
+const toTop = document.getElementById("toTop");
+
+window.addEventListener("scroll", () => {
+  toTop.classList.toggle("show", window.scrollY > 500);
+});
+
+toTop.addEventListener("click", () => {
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+
+/* Current year */
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
